@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<style>  
+    div.padded {  
+      padding-top: 0px;  
+      padding-right: 100px;  
+      padding-bottom: 0.25in;  
+      padding-left: 100px;  
+    }  
+  </style> 
+<title>Briana Zhang, Yi Liu, Richard Liu, Ja Wattanawong  |  CS 184</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+</head>
+<body>
+<br />
+<h1 align="middle">Final Project Proposal</h1>
+    <h2 align="middle">Briana Zhang, Yi Liu, Richard Liu, Ja Wattanawong</h2>
+
+    <div class="padded">
+
+    <h2 align="middle">Physically Based Fur Rendering </h2>
+        <p>
+          We will implement hair and fur rendering using both the Marschner (2003) model and the Yan (2015) model and compare them on criteria such as visual appearance and rendering speed. We can also talk about theoretical differences between the two models and the improvements Yan et al. made to render fur.
+        </p>
+
+        <h3 align="middle"> Team Members </h3>
+        <ul>
+          <li>
+            Ja Wattanawong
+          </li>
+          <li>Yi Liu</li>
+          <li>
+            Briana Zhang
+          </li>
+          <li>
+            Richard Liu
+        </ul>
+
+
+    
+    <h2 align="middle">Problem Description</h2>
+    <p> 
+      We will look into using the Mitsuba renderer, as it seems to be a popular choice in the papers and there are hair and fur models for it.
+    </p>
+    <p>We want to generate realistic fur. It is challenging because first, normal human hair itself is difficult to render because on a microscopic level, it is not just a perfect cylinder with constant density and material. This is where we will use the Marschner model of hair. 
+    </p>
+    <p>
+      The next step is to incorporate Yan et. al’s fur reflectance model, which follows the fact that animal fur has thicker medullas and more complex cuticles. 
+    </p>
+
+    <h2 align="middle">Goals and Deliverables
+    </h2>
+
+    <p>
+      We plan to deliver photos comparing the two methods we implement versus the most simplistic models of hair rendering that assumes hair is a non-translucent material as shown in other papers.
+    </p>
+
+    <p>
+      Some other things we aspire to achieve are animated hair and kinematic models as well as using faster approximations such as dual scattering that are suitable for real time rendering.
+    </p>
+
+
+    <h2 align="middle">Schedule</h2>
+
+    <p>
+      Week 1 - Begin implementing the Marschner model.
+    </p>
+    <p>
+      Week 2 - Finish up any last touches for Marschner model and begin implementing the Yan model.
+    </p>
+    <p>
+      Week 3 - Finish up any last touches for the Yan model. Compare renderings using both models. Begin the presentation and write-up.
+    </p>
+    <p>Week 4 - Finish up the presentation and write-up. If time permits, might explore physical dynamics of hair models and rendering animations of its movement using mentioned techniques.    </p>
+
+    <h2 align="middle">Part 5: Adaptive Sampling</h2>
+    <p>
+        For each pixel, adaptive sampling will only continue sampling for that pixel if the illuminance has not converged yet. Convergence is determined by the mean and standard deviation which is calculated by keeping track of the running sum and running squared sum respectively. The convergence factor is 1.96 * std / square root of number of factors. If it is less than mean times a tolerance factor it is considered converged. If it is determined to have converged, continue to the next pixel. Furthermore, we check only ever couple iterations so it is less computationally expensive. 
+    </p>
+
+    <h2 align="middle"> Resources </h2>
+    <ul>
+      <li>
+        Computing Resources
+        <ul>
+          <li>Personal Computers
+            <ul>
+              I7 with 12 cores
+            </ul>
+          </li>
+          <li> CSUA
+            <ul>
+              32 cores with 8 GPUs
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+</div>
+</body>
+</html>
+
+
+
+
